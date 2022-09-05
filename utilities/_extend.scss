@@ -1,0 +1,39 @@
+%grid{
+    height: 100vh;
+    display: grid;
+}
+%slider{
+    width: 18rem;
+    height: 18rem;
+    margin: auto;
+    position: relative;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    box-shadow: 0 0 5px 5px black;
+}
+
+%sliderImg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.7s;
+}
+
+%sliderInput{
+    position: relative;
+    z-index: 50;
+    margin: 0.5rem;
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    background: white;
+    border-radius: 50%;
+    border: 2px solid black;
+    cursor: pointer;
+}

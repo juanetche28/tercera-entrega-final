@@ -1,0 +1,19 @@
+//Condicionales
+
+@mixin condicion ($colores-primarios) {
+
+    background-color: $colores-primarios;
+
+    //condicion
+
+    @if $colores-primarios == #e7daba {
+        margin: 20px;
+        padding: 10px;
+    } 
+    @else {
+        margin: 20px;
+        padding: 20px;
+    }
+
+
+}

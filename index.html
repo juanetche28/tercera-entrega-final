@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aromas en el Alma es una Tienda Online de venta de Fragancias, Difusores, perfuminas y esencias.">
+    <meta name="keywords" content="AROMAS, ESENCIAS, FRAGANCIAS, PERFUMINAS,DIFUSORES, LAVANDA, TIENDA ONLINE"> 
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!--CSS-->
+    <link rel="stylesheet" href="CSS/styles.css">
+    <!-- Utilizo una Fuente de google fonts en <h2> del home-->
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&display=swap');
+    </style>
+    <title>Aromas en el Alma - Tienda Online</title>
+</head>
+
+<body id="bodyIndex">
+    <div class="padreIndex">
+        <div class="indexMenu">
+            <!--Creacion del Menu Bootstrap-->
+            <div class="container bg-body">
+                <div class="row mt-3 mb-3">
+                    <div class="col-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <div class="container-fluid">
+                                <a title="Home" href="#logo">
+                                    <img id="logo" src="img/logo.png" height="80px" alt="Difusor Logo">
+                                </a>
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="pages/productos.html">
+                                                Productos
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="pages/contacto.html">
+                                                Contacto
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="pages/nosotros.html">
+                                                Nosotros
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="pages/galeria.html">
+                                                Galeria
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="#pie-de-pagina">
+                                                Ir al Footer
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+        </div>
+        <!--Frase - Fuente Google fonts-->
+        <div class="indexContenido-01">
+            <h2 id="h2Home">
+                En la actualidad la aromaterapia es una medicina  complementaria ampliamente practicada, que utiliza aceites esenciales de plantas aromáticas, flores, hojas, semillas, cortezas y frutas para ayudar a curar.
+            </h2>
+            <hr>
+        </div>
+        <!--Creacion de Lista-->
+        <div class="indexContenido-02">
+            <h3 class="h3Home">
+                La aromaterapia no solo huele bien, sino que es beneficiosa de muchas maneras. La aromaterapia puede ayudar a aliviar:
+            </h3>
+            <!-- Aca agregue una Clase a los li ya que voy a personalizar el "punto" con forma de cuadrado-->
+            <li class="liCuadrado">Náuseas</li>
+            <li class="liCuadrado">Dolores y molestias corporales</li>
+            <li class="liCuadrado">Ansiedad, agitación, estrés y depresión</li>
+            <li class="liCuadrado">Fatiga e insomnio</li>
+            <li class="liCuadrado">Dolores musculares</li>
+            <li class="liCuadrado">Dolores de cabeza</li>
+            <li class="liCuadrado">Problemas menstruales</li>
+            <hr>
+        </div>  
+        </div>
+        <!--Creacion de Tabla-->
+        <div class="indexContenido-03">  
+            <h4 class="h3Home">¿Cómo puedo utilizar la aromaterapia?</h4>
+            <table>
+                <tr>
+                    <td><strong>Uso</strong></td>
+                    <td><strong>Detalle</strong></td>
+                </tr>
+                <tr>
+                    <td>Inhalación indirecta</td>
+                    <td>La persona respira un aceite esencial al utilizar un difusor</td>
+                </tr>
+                <tr>
+                    <td>Inhalación directa</td>
+                    <td>La persona respira un aceite esencial utilizando un inhalador individual</td>
+                </tr>
+                <tr>
+                    <td>Masaje</td>
+                    <td>se diluyen uno o más aceites esenciales y se aplican masajes sobre la piel</td>
+                </tr>
+            </table>
+            <hr>
+        </div>
+        <!--Footer-->
+        <div class="footerContenido">
+            <div class="footer">
+                <li id="volverHome">
+                    <!--Enlace Interno-->
+                    <a href="#logo">Volver al inicio</a>
+                </li>
+                <div id="pie-de-pagina">
+                    <h3 id="footer">Copyright ©</h3>
+                </div>
+            </div>
+            <div class="footer">
+                <a href="https://instagram.com/aromasenelalma" target="_blank">
+                    <img class="instagram" src="./img/instagram.png" alt="Logo de app Instagram" width="70px" height="70px">
+                </a>
+                <a href="https://www.facebook.com/aromasenelalmaa" target="_blank">
+                    <img class="facebook" src="./img/facebook.png" alt="Logo de app facebook" width="60px" height="60px">
+                </a>
+                <a href="https://twitter.com/" target="_blank">
+                    <img class="twitter" src="./img/twitter.png" alt="Logo de app twitter" width="60px" height="60px">
+                </a>
+            </div>  
+        </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"  integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,547 @@
+//linea de comentario
+/*linea de comentarios en SASS y CSS*/
+
+@import "utilities/variables";
+@import "utilities/mapas";
+@import "utilities/listas";
+@import "utilities/mixin";
+@import "utilities/extend";
+@import "utilities/condicionales";
+
+
+/* aplico reset*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+hr {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+/* -----Estilos del Menu Hamburgesa-----*/
+div.col-12 {
+    background-color: $color-body;
+}
+nav.navbar {
+    background-color: $color-body;
+}
+
+/* -----Aplico Background a los body de cada html-----*/
+
+#bodyProductos, #bodyNosotros, #bodyContacto, #bodyGaleria, #bodyIndex{background-color: $color-body;}
+
+/*Personalizacion del Menu de todos los html*/ 
+nav{
+    ul{
+        li{
+        background-color: nth($colores, 2);
+        display: inline-block;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 10px;
+        border:double;}
+        li:hover{
+            background-color: $color-hover;
+        }
+    }
+}
+
+/*-----Estilos aplicados para el footer de todos los html-----*/
+
+.footerContenido {
+    height: auto;
+    background-color: nth($colores, 2);
+    grid-area: footer;
+    align-items: center;
+}
+.footer{
+        float: left;
+    }
+#footer{
+        font-size: 15px;
+        margin-left: 10px;
+ 
+    }
+#volverHome{
+        list-style: none;
+        margin: 10px;
+    }
+
+
+/*-----Estilos aplicados en pagina "Index"-----*/
+
+.padreIndex{
+    @extend %grid;
+    grid-template-areas: 
+    "logoMenu logoMenu logoMenu"
+    "frase frase frase"
+    "lista lista lista"
+    "tabla tabla tabla"
+    "footer footer footer"
+    ;
+    .indexMenu{
+        grid-area: logoMenu;
+    }
+    .indexContenido-01{
+        grid-area: frase;
+        /* Utilizo una Fuente personalizada de Google Fonts*/
+        #h2Home{
+            display: block;
+            margin-top: 30px;
+            padding-bottom: 40px;
+            padding-left: 10px;
+            padding-right: 50px;
+            font-family: 'Edu VIC WA NT Beginner', cursive;
+            font-size: 30px;
+            color: $color-texto-primario;
+            line-height: 50px;
+            text-transform: capitalize;
+        }
+    }
+    .indexContenido-02{
+        grid-area: lista;
+        margin-bottom: 20px;
+        // Uso Mixin 
+        .h3Home{
+            @include box-model
+        }
+        /* Cambio el estilo de las listas, muestro los items con cuadrados rellenos */
+        .liCuadrado {
+            @include medidas (10px, 10px);
+            list-style-type: square;
+        }
+
+    }
+    .indexContenido-03{
+        grid-area: tabla;
+        margin-bottom: 20px;
+    }
+}
+
+table{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    margin-left: 10px;
+}
+td{
+    border: 1px solid rgb(0, 0, 0);
+    text-align: left;
+    padding: 8px;
+}
+
+/*-----Estilos aplicados en pagina "Productos"-----*/
+
+.padreProductos{
+    @extend %grid;
+    grid-template-areas: 
+        "logoMenu logoMenu logoMenu"
+        "titulo1 titulo1 titulo1"
+        "lista lista lista"
+        "footer footer footer"
+    ;
+    .productosMenu{
+        grid-area: logoMenu;
+    }
+    .productosContenido-01{
+        grid-area: titulo1;
+    }
+    
+    .productosContenido-02{
+        grid-area: lista;
+    }
+}
+
+/* Aplico propiedad de Mapas*/
+
+.h1Productos{
+    margin: map-get($map: $title, $key: margin-title);
+    padding: map-get($map: $title, $key: padding-title);
+    font-family: map-get($map: $title, $key:font-family-title);
+    font-size: map-get($map: $title, $key: font-size-title);
+    color: map-get($map: $title, $key: color-title);
+}
+
+/* Aplico estilos a la lista*/
+#ulProductos{
+    margin-left: 40px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.li1Productos{
+    margin: 10px;
+}
+.li2Productos{
+    margin-left: 30px;
+}
+
+/*-----Estilos aplicados en pagina "Contacto"-----*/
+
+.padreContacto{
+    @extend %grid;
+    grid-template-areas: 
+    "logoMenu logoMenu logoMenu"
+    "titulo titulo titulo"
+    "form form form"
+    "footer footer footer"
+    ;
+    .contactoMenu{
+        grid-area: logoMenu;
+    }
+    
+    .contactoContenido-01{
+        grid-area: titulo;
+    }
+    
+    .contactoContenido-02{
+        grid-area: form;
+    }
+}
+
+ #h1Contacto{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    color: $color-texto-primario;
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    text-align: left;
+    border: 2px solid rgb(0, 0, 0);
+ }
+// uso listas
+ #formContacto{
+    margin: 10px;
+    padding: 10px;
+    background-color: nth($colores, 5);
+    fieldset{
+        margin: 10px;
+        border: 2px solid $color-texto-primario;
+    }
+    legend{
+        margin: 10px;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+}
+
+/*-----Estilos aplicados en pagina "Nosotros"-----*/
+
+.padreNosotros{
+    @extend %grid;
+    grid-template-areas: 
+    "logoMenu"
+    "titulo"
+    "frase"
+    "about"
+    "footer"
+    ;
+    .nosotrosMenu{
+        grid-area: logoMenu;
+    }
+    .nosotrosContenido-01{
+        grid-area: titulo;
+    } 
+    .nosotrosContenido-02{
+        grid-area: frase;
+    }
+    .nosotrosContenido-03{
+        grid-area: about;
+    }
+}
+
+#h2Nosotros{
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 20px;
+    font-size: 25px;
+}
+
+#h3Nosotros{
+    display: inline-block;
+    border: 2px solid $color-texto-primario;
+    font-style: italic;
+    @include condicion (#e7daba);
+}
+
+#h4Nosotros{
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.h4Nosotros{
+    margin: 20px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+.instagram:hover{
+    transform: scale(1.5);
+}
+
+.facebook:hover{
+    transform: scale(1.5);
+}
+.twitter:hover{
+    transform: scale(1.5);
+}
+
+/*-----Estilos aplicados en pagina "Galeria"-----*/
+
+.padreSlider{
+    @extend %grid;
+    grid-template-areas:
+    "logoMenu logoMenu logoMenu"
+    "titulo titulo titulo"
+    "slider1 slider2 slider3"
+    "slider4 slider5 slider6"
+    "footer footer footer"
+    ;
+
+    .slider1 {
+        @extend %slider;
+    }
+    .slider1 img {
+        @extend %sliderImg;
+    }
+    
+    .slider1 input[type="radio"] {
+        display: none;
+    }
+    
+    .slider1 input[type="radio"]:checked ~ img {
+        opacity: 1;
+    }
+    .slider1 input[type="radio"] + label {
+        @extend %sliderInput;
+    }
+    
+    .slider1 input[type="radio"]:checked + label {
+        background: black;
+        border: 2px solid white;
+    }
+
+    .slider2 {
+        @extend %slider;
+    }
+    .slider2 img {
+        @extend %sliderImg;
+    }
+    
+    .slider2 input[type="radio"] {
+        display: none;
+    }
+    
+    .slider2 input[type="radio"]:checked ~ img {
+        opacity: 1;
+    }
+    .slider2 input[type="radio"] + label {
+        @extend %sliderInput;
+    }
+    
+    .slider2 input[type="radio"]:checked + label {
+        background: black;
+        border: 2px solid white;
+    }
+
+    .slider3 {
+        @extend %slider;
+    }
+    .slider3 img {
+        @extend %sliderImg;
+    }
+    
+    .slider3 input[type="radio"] {
+        display: none;
+    }
+    
+    .slider3 input[type="radio"]:checked ~ img {
+        opacity: 1;
+    }
+    .slider3 input[type="radio"] + label {
+        @extend %sliderInput;
+    }
+    
+    .slider3 input[type="radio"]:checked + label {
+        background: black;
+        border: 2px solid white;
+    }
+    .slider4 {
+        @extend %slider;
+    }
+    .slider4 img {
+        @extend %sliderImg;
+    }
+    
+    .slider4 input[type="radio"] {
+        display: none;
+    }
+    
+    .slider4 input[type="radio"]:checked ~ img {
+        opacity: 1;
+    }
+    .slider4 input[type="radio"] + label {
+        @extend %sliderInput;
+    }
+    
+    .slider4 input[type="radio"]:checked + label {
+        background: black;
+        border: 2px solid white;
+    }
+    .slider5 {
+        @extend %slider;
+    }
+    .slider5 img {
+        @extend %sliderImg;
+    }
+    
+    .slider5 input[type="radio"] {
+        display: none;
+    }
+    
+    .slider5 input[type="radio"]:checked ~ img {
+        opacity: 1;
+    }
+    .slider5 input[type="radio"] + label {
+        @extend %sliderInput;
+    }
+    
+    .slider5 input[type="radio"]:checked + label {
+        background: black;
+        border: 2px solid white;
+    }
+    .slider6 {
+        @extend %slider;
+    }
+    .slider6 img {
+        @extend %sliderImg;
+    }
+    
+    .slider6 input[type="radio"] {
+        display: none;
+    }
+    
+    .slider6 input[type="radio"]:checked ~ img {
+        opacity: 1;
+    }
+    .slider6 input[type="radio"] + label {
+        @extend %sliderInput;
+    }
+    
+    .slider6 input[type="radio"]:checked + label {
+        background: black;
+        border: 2px solid white;
+    }
+    
+
+
+    .galeriaMenu{
+        grid-area: logoMenu;
+    }
+    
+    .galeriaContenido-01{
+        grid-area: titulo;
+    }
+
+    .slider1{
+        grid-area: slider1;
+        margin: 20px;
+        border: 4px solid $color-texto-primario;
+        outline: 2px solid black;
+    }
+    .slider2{
+        grid-area: slider2;
+        margin: 20px;
+        border: 4px solid $color-texto-primario;
+        outline: 2px solid black;
+    }
+    .slider3{
+        grid-area: slider3;
+        margin: 20px;
+        border: 4px solid $color-texto-primario;
+        outline: 2px solid black;
+    }
+    .slider4{
+        grid-area: slider4;
+        margin: 20px;
+        border: 4px solid $color-texto-primario;
+        outline: 2px solid black;
+    }
+    .slider5{
+        grid-area: slider5;
+        margin: 20px;
+        border: 4px solid $color-texto-primario;
+        outline: 2px solid black;
+    }
+    .slider6{
+        grid-area: slider6;
+        margin: 20px;
+        border: 4px solid $color-texto-primario;
+        outline: 2px solid black;
+    }
+}
+
+/* MediaQueries */
+
+@media screen and (max-width: 1200px){
+
+    /*-----------Galeria.html-----------*/
+
+    .padreSlider{
+        height: 100vh;
+        display: grid;
+        grid-template-areas:
+        "logoMenu logoMenu" 
+        "titulo titulo"
+        "slider1 slider2"
+        "slider3 slider4"
+        "slider5 slider6"
+        "footer footer"
+        ;
+    }    
+}
+
+@media screen and (max-width: 600px){
+
+    /*-----------Galeria.html-----------*/
+
+    .padreSlider{
+        height: 100vh;
+        display: grid;
+        grid-template-areas:
+        "logoMenu logoMenu" 
+        "titulo titulo"
+        "slider1 slider2"
+        "slider3 slider4"
+        "slider5 slider6"
+        "footer footer"
+        ;
+    }    
+
+     /*-----------Nosotros.html-----------*/
+     #h3Nosotros{
+        margin: 10px;
+        font-size: 15px;
+    }
+
+}
+
+ 
+
+
+
+
+
+
+
+
+
+
+
